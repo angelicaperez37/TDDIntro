@@ -20,6 +20,6 @@ public class Account {
     }
 
     public void makeWithdrawal(int amount) {
-        balance -= amount;
+        if (amount <= balance)  balance -= amount;
     }
 }
