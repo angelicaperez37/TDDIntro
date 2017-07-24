@@ -18,15 +18,14 @@ public class AccountTests {
 
     @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
-        Account account = new Account();
         account.makeDeposit(10);
         assertTrue(account.getBalance()==10);
     }
 
     @Test
-    @Ignore
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
-
+        account.makeWithdrawal(10);
+        assertTrue(account.getBalance()==-10);
     }
 
     @Test

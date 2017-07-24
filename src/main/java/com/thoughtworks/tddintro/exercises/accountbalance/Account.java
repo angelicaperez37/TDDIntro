@@ -14,4 +14,8 @@ public class Account {
     public void makeDeposit(int amount) {
         balance += amount;
     }
+
+    public void makeWithdrawal(int amount) {
+        balance -= amount;
+    }
 }
