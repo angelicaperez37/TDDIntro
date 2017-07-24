@@ -6,31 +6,28 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class AccountTests {
 
-    private Account account;
-
-    @Before
-    public void setUp() {
-        account = new Account();
-    }
-
     @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
-        account.makeDeposit(10);
-        assertTrue(account.getBalance()==10);
+        Account account = new Account(100);
+        account.makeDeposit(50);
+        assertEquals(150, account.getBalance());
     }
 
     @Test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
-        account.makeWithdrawal(10);
-        assertTrue(account.getBalance()==-10);
+        Account account = new Account(100);
+        account.makeWithdrawal(50);
+        assertEquals(50, account.getBalance());
     }
 
     @Test
-    @Ignore
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
-
+        Account account = new Account(50);
+        account.makeWithdrawal(100);
+        assertEquals(50, account.getBalance());
     }
 }
