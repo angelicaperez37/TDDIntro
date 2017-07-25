@@ -56,7 +56,6 @@ public class LibraryTest {
     }
 
     @Test
-    @Ignore
     public void shouldAddBookToCollectionWhenEnteredByUser() throws IOException {
         when(bufferedReader.readLine()).thenReturn("The Hobbit");
         library.enterBook();
@@ -64,10 +63,8 @@ public class LibraryTest {
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldDeleteBookFromCollectionWhenRemovedByUser() throws IOException {
-        // Add when/thenReturn here
-
+        when(bufferedReader.readLine()).thenReturn("The Two Towers");
         books.add("The Two Towers");
         library.removeBook();
 
